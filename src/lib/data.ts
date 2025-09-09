@@ -64,6 +64,30 @@ export const stories: Story[] = [
     coverImage: 'https://picsum.photos/400/500?random=7',
     dataAiHint: 'prince poet',
     content: 'El príncipe Adrián prefería la pluma a la espada. Pasaba sus días escribiendo poemas en la torre del castillo. Un día, vio a Isabella en el mercado, y su belleza lo inspiró como nunca antes. Le escribió versos anónimos que llegaban a ella con el viento. Isabella se enamoró de las palabras sin conocer al autor. En un baile de máscaras, Adrián recitó su último poema y, al reconocer la voz, Isabella supo que había encontrado al dueño de su corazón.'
+  },
+  {
+    id: 'caperucita-roja',
+    title: 'Caperucita Roja',
+    synopsis: 'Una niña se encuentra con un lobo feroz en su camino a casa de su abuela.',
+    coverImage: 'https://picsum.photos/400/500?random=8',
+    dataAiHint: 'wolf forest',
+    content: 'Había una vez una niña llamada Caperucita Roja. Un día, su madre le pidió que llevara una cesta a su abuela enferma. "No te desvíes del camino", le advirtió. En el bosque, se encontró con un lobo astuto que la engañó para que tomara el camino más largo.\nEl lobo llegó primero a casa de la abuela, se la comió y se disfrazó con su ropa. Cuando Caperucita llegó, notó algo extraño. "¿Qué orejas tan grandes tienes?", preguntó. "¡Para oírte mejor!", dijo el lobo. Al final, el lobo saltó y se la comió también. Pero un cazador que pasaba por allí escuchó los gritos, abrió la panza del lobo y salvó a Caperucita y a su abuela.'
+  },
+  {
+    id: 'los-tres-cerditos',
+    title: 'Los Tres Cerditos',
+    synopsis: 'Tres hermanos cerditos construyen casas de diferentes materiales para protegerse de un lobo hambriento.',
+    coverImage: 'https://picsum.photos/400/500?random=9',
+    dataAiHint: 'three pigs',
+    content: 'Había una vez tres cerditos que decidieron construir sus propias casas. El primero, perezoso, la hizo de paja. El segundo la hizo de madera. El tercero, muy trabajador, la construyó con ladrillos.\nLlegó el lobo y, soplando, derribó la casa de paja y la de madera, comiéndose a los dos primeros cerditos. Pero cuando intentó derribar la casa de ladrillos, sopló y sopló sin éxito. El cerdito trabajador vivió feliz y seguro, demostrando que el esfuerzo tiene su recompensa.'
+  },
+  {
+    id: 'hansel-y-gretel',
+    title: 'Hansel y Gretel',
+    synopsis: 'Dos hermanos abandonados en el bosque encuentran una casa de jengibre que esconde un oscuro secreto.',
+    coverImage: 'https://picsum.photos/400/500?random=10',
+    dataAiHint: 'gingerbread house',
+    content: 'Hansel y Gretel eran hijos de un leñador muy pobre. Su madrastra los abandonó en el bosque. Para encontrar el camino de vuelta, dejaron un rastro de migas de pan, pero los pájaros se las comieron.\nPerdidos, encontraron una casa hecha de pan de jengibre y dulces. Una anciana los invitó a entrar, pero era una bruja que quería comérselos. Encerró a Hansel en una jaula. Cuando la bruja se preparaba para cocinarlo, Gretel la empujó dentro del horno. Los niños escaparon con sus tesoros y encontraron el camino a casa.'
   }
 ];
 
