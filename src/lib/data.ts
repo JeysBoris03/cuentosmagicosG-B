@@ -1,3 +1,4 @@
+
 export type Story = {
   id: string;
   title: string;
@@ -39,6 +40,30 @@ export const stories: Story[] = [
     coverImage: 'https://picsum.photos/400/500?random=4',
     dataAiHint: 'robot friend',
     content: `En una bulliciosa ciudad del futuro, vivía un robot llamado Bip. Bip trabajaba en una fábrica, ensamblando juguetes todo el día. Su vida era monótona y programada.\nUn día, un pajarito herido cayó en su ventana. Bip, en contra de su programación, lo cuidó. Le construyó un nido con cables suaves y compartió su energía. Cuando el pajarito sanó y se fue volando, Bip sintió un extraño cortocircuito en su pecho. No era un error; era la primera vez que sentía tristeza y alegría al mismo tiempo. Bip entendió que tener un corazón no se trata de engranajes, sino de cuidar a los demás.`,
+  },
+  {
+    id: 'el-fantasma-del-atico',
+    title: 'El Fantasma del Ático',
+    synopsis: 'Dos amigos exploran el ático prohibido de una vieja casa, sin saber qué les espera.',
+    coverImage: 'https://picsum.photos/400/500?random=5',
+    dataAiHint: 'ghost attic',
+    content: 'Carlos y Ana siempre tuvieron curiosidad por el ático de la casa abandonada. Una noche de tormenta, decidieron entrar. La puerta crujió y una corriente de aire helado los recibió. En el centro, una mecedora se movía sola. De repente, una risa fría resonó y una sombra se alargó en la pared. Salieron corriendo y nunca más volvieron.'
+  },
+  {
+    id: 'el-jardin-secreto',
+    title: 'El Jardín Secreto',
+    synopsis: 'El amor florece entre dos jóvenes que cuidan juntos un jardín olvidado.',
+    coverImage: 'https://picsum.photos/400/500?random=6',
+    dataAiHint: 'secret garden',
+    content: 'Elena amaba las flores. Un día, conoció a Marco, quien le mostró un jardín abandonado tras un muro de hiedra. Juntos, decidieron devolverle la vida. Entre risas y conversaciones, plantaron semillas que florecieron junto a su amor. El jardín se convirtió en su refugio, un lugar donde su cariño crecía con cada nueva flor.'
+  },
+  {
+    id: 'el-principe-poeta',
+    title: 'El Príncipe Poeta',
+    synopsis: 'Un príncipe apasionado por la poesía lucha por el amor de una doncella que inspira sus versos.',
+    coverImage: 'https://picsum.photos/400/500?random=7',
+    dataAiHint: 'prince poet',
+    content: 'El príncipe Adrián prefería la pluma a la espada. Pasaba sus días escribiendo poemas en la torre del castillo. Un día, vio a Isabella en el mercado, y su belleza lo inspiró como nunca antes. Le escribió versos anónimos que llegaban a ella con el viento. Isabella se enamoró de las palabras sin conocer al autor. En un baile de máscaras, Adrián recitó su último poema y, al reconocer la voz, Isabella supo que había encontrado al dueño de su corazón.'
   }
 ];
 
