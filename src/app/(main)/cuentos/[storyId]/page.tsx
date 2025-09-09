@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 import { stories, type Story } from "@/lib/data";
+import { AudioPlayer } from "@/components/features/audio-player";
 
 export async function generateStaticParams() {
   return stories.map((story) => ({
@@ -42,6 +43,10 @@ export default function StoryPage({ params }: { params: { storyId:string } }) {
         {story.content.split('\n').map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
+      </div>
+      
+      <div className="mt-12">
+        <AudioPlayer textToSpeech={story.content} />
       </div>
     </article>
   );
