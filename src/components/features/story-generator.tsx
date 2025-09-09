@@ -7,7 +7,8 @@ import { z } from 'zod';
 import { Loader2, Wand2 } from 'lucide-react';
 import Image from 'next/image';
 
-import { generateChildrensStory } from '@/ai/flows/generate-childrens-story';
+import { generateChildrensStory, type GenerateChildrensStoryOutput } from '@/ai/flows/generate-childrens-story';
+import { generateStoryImage, type GenerateStoryImageOutput } from '@/ai/flows/generate-story-image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
@@ -22,13 +23,12 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-type StoryResult = {
-  story: string;
-};
+type StoryResult = GenerateChildrensStoryOutput & GenerateStoryImageOutput;
 
 export function StoryGenerator() {
   const [result, setResult] = useState<StoryResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('');
   const { toast } = useToast();
 
   const form = useForm<FormValues>({
@@ -42,8 +42,14 @@ export function StoryGenerator() {
     setIsLoading(true);
     setResult(null);
     try {
+      setLoadingMessage('Nuestros duendes escritores están creando tu historia...');
       const storyResult = await generateChildrensStory(data.prompt);
-      setResult(storyResult);
+      
+      setLoadingMessage('¡Dando color a tu aventura! Creando la ilustración...');
+      const imageResult = await generateStoryImage(storyResult.synopsis);
+
+      setResult({ ...storyResult, ...imageResult });
+
     } catch (error) {
       console.error('Error al generar la historia:', error);
       toast({
@@ -53,6 +59,7 @@ export function StoryGenerator() {
       });
     } finally {
       setIsLoading(false);
+      setLoadingMessage('');
     }
   };
 
@@ -99,7 +106,7 @@ export function StoryGenerator() {
       {isLoading && (
         <div className="text-center mt-12">
           <Loader2 className="mx-auto h-12 w-12 animate-spin text-primary" />
-          <p className="mt-4 text-muted-foreground text-lg">Nuestros duendes escritores están trabajando...</p>
+          <p className="mt-4 text-muted-foreground text-lg">{loadingMessage}</p>
         </div>
       )}
 
@@ -108,16 +115,19 @@ export function StoryGenerator() {
           <h2 className="text-3xl font-bold text-center mb-8 font-headline">Tu Historia Mágica</h2>
           <Card className="shadow-xl">
             <CardContent className="p-8 md:p-12">
-              <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
+              <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
                 <Image
-                  src="https://picsum.photos/400/400?random=story"
-                  alt="Ilustración genérica de un cuento"
+                  src={result.imageUrl}
+                  alt={result.title}
                   width={200}
                   height={200}
                   className="rounded-lg object-cover w-full md:w-48 h-48"
-                  data-ai-hint="storybook illustration"
+                  data-ai-hint={result.dataAiHint}
                 />
-                <h3 className="text-2xl font-semibold text-primary font-headline">Aquí está tu creación:</h3>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-semibold text-primary font-headline mb-2">{result.title}</h3>
+                  <p className="text-muted-foreground italic">{result.synopsis}</p>
+                </div>
               </div>
               
               <div className="space-y-4 text-lg leading-relaxed text-foreground/90">
