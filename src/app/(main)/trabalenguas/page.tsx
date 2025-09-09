@@ -1,8 +1,6 @@
-import { Volume2 } from "lucide-react";
-
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { tongueTwisters } from "@/lib/data";
+import { AudioPlayerTrabalenguas } from "@/components/features/audio-player-trabalenguas";
 
 export default function TrabalenguasPage() {
   return (
@@ -14,17 +12,12 @@ export default function TrabalenguasPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {tongueTwisters.map((twister, index) => (
           <Card key={index} className="flex flex-col justify-between shadow-lg">
-            <CardContent className="p-6">
+            <CardContent className="p-6 flex-1 flex items-center">
               <p className="text-lg font-medium text-foreground/90 italic">
                 &ldquo;{twister}&rdquo;
               </p>
             </CardContent>
-            <CardFooter>
-              <Button variant="outline" className="w-full" disabled>
-                <Volume2 className="mr-2 h-4 w-4" />
-                Escuchar
-              </Button>
-            </CardFooter>
+            <AudioPlayerTrabalenguas textToSpeech={twister} />
           </Card>
         ))}
       </div>
