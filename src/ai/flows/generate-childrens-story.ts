@@ -38,7 +38,7 @@ const generateChildrensStoryPrompt = ai.definePrompt({
   name: 'generateChildrensStoryPrompt',
   input: {schema: GenerateChildrensStoryInputSchema},
   output: {schema: GenerateChildrensStoryOutputSchema},
-  prompt: `You are a children's story writer. Generate a short story based on the following elements: {{{$input}}}. The story should have a beginning, middle, and end and be appropriate for young children.`,
+  prompt: `Eres un escritor de cuentos para niños. Genera un cuento corto en español basado en los siguientes elementos: {{{$input}}}. La historia debe tener un principio, un desarrollo y un final, y ser apropiada para niños pequeños. La respuesta debe ser únicamente en español.`,
 });
 
 const generateChildrensStoryFlow = ai.defineFlow(
