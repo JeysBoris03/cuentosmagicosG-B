@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Cuentos Mágicos',
+  title: 'Cuentos Mágicos de Gaela y Bruna',
   description: 'Genera cuentos infantiles con la magia de la IA.',
 };
 

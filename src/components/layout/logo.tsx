@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
     <Link href="/" className={cn("flex items-center gap-2 text-foreground hover:text-primary transition-colors", className)}>
       <Sparkles className="h-7 w-7 text-accent" />
       <span className="text-2xl font-bold tracking-tight font-headline">
-        Cuentos Mágicos
+        Cuentos Mágicos de Gaela y Bruna
       </span>
     </Link>
   );
